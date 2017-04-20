@@ -1,0 +1,3335 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/poppinss/indicative#readme"
+
+    >indicative (v2.2.1)</a>
+</h1>
+<h4>Intentionally beautiful schema and raw validator for nodejs</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.indicative">module indicative</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.extend">
+            function <span class="apidocSignatureSpan">indicative.</span>extend
+            <span class="apidocSignatureSpan">(name, method, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.extend">
+            function <span class="apidocSignatureSpan">indicative.</span>is.extend
+            <span class="apidocSignatureSpan">(name, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitize">
+            function <span class="apidocSignatureSpan">indicative.</span>sanitize
+            <span class="apidocSignatureSpan">(data, rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.extend">
+            function <span class="apidocSignatureSpan">indicative.</span>sanitizor.extend
+            <span class="apidocSignatureSpan">(name, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.validate">
+            function <span class="apidocSignatureSpan">indicative.</span>validate
+            <span class="apidocSignatureSpan">(data, rules, messages)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.validateAll">
+            function <span class="apidocSignatureSpan">indicative.</span>validateAll
+            <span class="apidocSignatureSpan">(data, rules, messages)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">indicative.</span>engine</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">indicative.</span>is</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">indicative.</span>sanitizor</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.indicative.engine">module indicative.engine</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.engine.getValidationMethod">
+            function <span class="apidocSignatureSpan">indicative.engine.</span>getValidationMethod
+            <span class="apidocSignatureSpan">(validation)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.engine.runValidationOnField">
+            function <span class="apidocSignatureSpan">indicative.engine.</span>runValidationOnField
+            <span class="apidocSignatureSpan">(data, field, validation, messages, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.engine.validateField">
+            function <span class="apidocSignatureSpan">indicative.engine.</span>validateField
+            <span class="apidocSignatureSpan">(data, field, validations, messages, runAll)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.indicative.is">module indicative.is</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.above">
+            function <span class="apidocSignatureSpan">indicative.is.</span>above
+            <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.affirmative">
+            function <span class="apidocSignatureSpan">indicative.is.</span>affirmative
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.after">
+            function <span class="apidocSignatureSpan">indicative.is.</span>after
+            <span class="apidocSignatureSpan">(input, afterDate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.afterOffsetOf">
+            function <span class="apidocSignatureSpan">indicative.is.</span>afterOffsetOf
+            <span class="apidocSignatureSpan">(input, number, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.alpha">
+            function <span class="apidocSignatureSpan">indicative.is.</span>alpha
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.alphaNumeric">
+            function <span class="apidocSignatureSpan">indicative.is.</span>alphaNumeric
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.array">
+            function <span class="apidocSignatureSpan">indicative.is.</span>array
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.before">
+            function <span class="apidocSignatureSpan">indicative.is.</span>before
+            <span class="apidocSignatureSpan">(input, beforeDate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.beforeOffsetOf">
+            function <span class="apidocSignatureSpan">indicative.is.</span>beforeOffsetOf
+            <span class="apidocSignatureSpan">(input, number, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.between">
+            function <span class="apidocSignatureSpan">indicative.is.</span>between
+            <span class="apidocSignatureSpan">(input, min, max)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.boolean">
+            function <span class="apidocSignatureSpan">indicative.is.</span>boolean
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.creditCard">
+            function <span class="apidocSignatureSpan">indicative.is.</span>creditCard
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.date">
+            function <span class="apidocSignatureSpan">indicative.is.</span>date
+            <span class="apidocSignatureSpan">(input, strict)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.dateFormat">
+            function <span class="apidocSignatureSpan">indicative.is.</span>dateFormat
+            <span class="apidocSignatureSpan">(input, formats, locale)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.email">
+            function <span class="apidocSignatureSpan">indicative.is.</span>email
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.empty">
+            function <span class="apidocSignatureSpan">indicative.is.</span>empty
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.even">
+            function <span class="apidocSignatureSpan">indicative.is.</span>even
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.existy">
+            function <span class="apidocSignatureSpan">indicative.is.</span>existy
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.extend">
+            function <span class="apidocSignatureSpan">indicative.is.</span>extend
+            <span class="apidocSignatureSpan">(name, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.falsy">
+            function <span class="apidocSignatureSpan">indicative.is.</span>falsy
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.function">
+            function <span class="apidocSignatureSpan">indicative.is.</span>function
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.future">
+            function <span class="apidocSignatureSpan">indicative.is.</span>future
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.inArray">
+            function <span class="apidocSignatureSpan">indicative.is.</span>inArray
+            <span class="apidocSignatureSpan">(input, comparsionArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.inDateRange">
+            function <span class="apidocSignatureSpan">indicative.is.</span>inDateRange
+            <span class="apidocSignatureSpan">(input, minDate, maxDate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.intersectAll">
+            function <span class="apidocSignatureSpan">indicative.is.</span>intersectAll
+            <span class="apidocSignatureSpan">(input, intersectionArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.intersectAny">
+            function <span class="apidocSignatureSpan">indicative.is.</span>intersectAny
+            <span class="apidocSignatureSpan">(input, intersectionArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.ip">
+            function <span class="apidocSignatureSpan">indicative.is.</span>ip
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.ipv4">
+            function <span class="apidocSignatureSpan">indicative.is.</span>ipv4
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.ipv6">
+            function <span class="apidocSignatureSpan">indicative.is.</span>ipv6
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.json">
+            function <span class="apidocSignatureSpan">indicative.is.</span>json
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.negative">
+            function <span class="apidocSignatureSpan">indicative.is.</span>negative
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.null">
+            function <span class="apidocSignatureSpan">indicative.is.</span>null
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.number">
+            function <span class="apidocSignatureSpan">indicative.is.</span>number
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.object">
+            function <span class="apidocSignatureSpan">indicative.is.</span>object
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.odd">
+            function <span class="apidocSignatureSpan">indicative.is.</span>odd
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.past">
+            function <span class="apidocSignatureSpan">indicative.is.</span>past
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.phone">
+            function <span class="apidocSignatureSpan">indicative.is.</span>phone
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.positive">
+            function <span class="apidocSignatureSpan">indicative.is.</span>positive
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.regex">
+            function <span class="apidocSignatureSpan">indicative.is.</span>regex
+            <span class="apidocSignatureSpan">(input, regex)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.same">
+            function <span class="apidocSignatureSpan">indicative.is.</span>same
+            <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.sameType">
+            function <span class="apidocSignatureSpan">indicative.is.</span>sameType
+            <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.sorted">
+            function <span class="apidocSignatureSpan">indicative.is.</span>sorted
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.string">
+            function <span class="apidocSignatureSpan">indicative.is.</span>string
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.today">
+            function <span class="apidocSignatureSpan">indicative.is.</span>today
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.tomorrow">
+            function <span class="apidocSignatureSpan">indicative.is.</span>tomorrow
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.truthy">
+            function <span class="apidocSignatureSpan">indicative.is.</span>truthy
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.under">
+            function <span class="apidocSignatureSpan">indicative.is.</span>under
+            <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.url">
+            function <span class="apidocSignatureSpan">indicative.is.</span>url
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.is.yesterday">
+            function <span class="apidocSignatureSpan">indicative.is.</span>yesterday
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.indicative.sanitizor">module indicative.sanitizor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.blacklist">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>blacklist
+            <span class="apidocSignatureSpan">(value, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.camelCase">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>camelCase
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.capitalize">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>capitalize
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.decapitalize">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>decapitalize
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.escape">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>escape
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.extend">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>extend
+            <span class="apidocSignatureSpan">(name, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.humanize">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>humanize
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.normalizeEmail">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>normalizeEmail
+            <span class="apidocSignatureSpan">(value, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.plural">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>plural
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.singular">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>singular
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.slug">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>slug
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.stripLinks">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>stripLinks
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.stripTags">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>stripTags
+            <span class="apidocSignatureSpan">(value, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.title">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>title
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.toBoolean">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toBoolean
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.toDash">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toDash
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.toDate">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toDate
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.toFloat">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toFloat
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.toInt">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toInt
+            <span class="apidocSignatureSpan">(value, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.indicative.sanitizor.underscore">
+            function <span class="apidocSignatureSpan">indicative.sanitizor.</span>underscore
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.indicative" id="apidoc.module.indicative">module indicative</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.extend" id="apidoc.element.indicative.extend">
+        function <span class="apidocSignatureSpan">indicative.</span>extend
+        <span class="apidocSignatureSpan">(name, method, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (name, method, message) {
+  if (typeof (method) !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Invalid arguments, extend expects a method to execute&#x27;)
+  }
+  Validations[name] = method
+  Messages.set(_.snakeCase(name), message)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+4. **args** - An array of values your rule is expecting, it may be empty depending upon your rule expectations. For example `min
+:4` will have args array as `[4]`.
+5. **get** - it is a special function to get value for a given key from the data object, it is recommended to make use of this function
+ as getting nested values from an object can be a tedious task and `get` method takes care of it.
+
+#### extend
+Once you have defined your validation method, you can add it to validations store by calling `extend` method.
+
+```javascript
+indicative.<span class="apidocCodeKeywordSpan">extend</span>(&#x27;unique&#x27;, unique, &#x27;Field should be unique&#x27;)
+```
+
+Extend method takes 3 required parameters to register validation to validations store.
+
+1. **name** - remember to define name as `camelCase` which is consumed as `snake_case`.
+2. **method** - validation method to be executed.
+3. **message** - the error message to print on validation failure.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.extend" id="apidoc.element.indicative.is.extend">
+        function <span class="apidocSignatureSpan">indicative.</span>is.extend
+        <span class="apidocSignatureSpan">(name, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">is.extend = function (name, method) {
+  if (typeof (method) !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Invalid arguments, is.extends expects 2nd parameter as a function&#x27;)
+  }
+  Validator.is[name] = method
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return strongRegex.test(password)
+}
+```
+
+Above we created a function to check whether a password is strong enough or not, and now we can register it is a raw validator.
+
+```javascript
+indicative.<span class="apidocCodeKeywordSpan">is.extend</span>(&#x27;strongPassword&#x27;, strongPassword)
+```
+
+`is.extend` accepts two parameters where the first one is the method name and second is validation method to execute. Finally, you
+ can use this method as follows.
+
+```javascript
+indicative.is.strongPassword(&#x27;lowerUPP@123&#x27;)
+// returns true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitize" id="apidoc.element.indicative.sanitize">
+        function <span class="apidocSignatureSpan">indicative.</span>sanitize
+        <span class="apidocSignatureSpan">(data, rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sanitize = function (data, rules) {
+  const clonedSet = _.cloneDeep(data)
+  const transformedRules = Parser.transformRules(data, rules)
+  return _.reduce(transformedRules, (result, rules, field) =&#x3e; {
+    _.set(result, field, _sanitizeFieldValue(data, rules, field))
+    return result
+  }, clonedSet)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const sanitizationRules = {
+ email: &#x27;normalize_email&#x27;,
+ age: &#x27;to_int&#x27;,
+ aboutme: &#x27;strip_links&#x27;
+}
+
+const sanitizedData = indicative.<span class="apidocCodeKeywordSpan">sanitize</span>(data, sanitizationRules)
+console.log(sanitizedData)
+
+/**
+{
+ email: &#x27;barsneaky@gmail.com&#x27;,
+ age: 22,
+ aboutme: &#x27;i am dev @nowhere&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.extend" id="apidoc.element.indicative.sanitizor.extend">
+        function <span class="apidocSignatureSpan">indicative.</span>sanitizor.extend
+        <span class="apidocSignatureSpan">(name, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sanitizor.extend = function (name, method) {
+  if (typeof (method) !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Invalid arguments, sanitizor.extend expects 2nd parameter to be a function&#x27;)
+  }
+  Sanitization.sanitizor[name] = method
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return value.toUpperCase()
+}
+```
+
+Above we created a simple method to return `Uppercase` version of a string. Now we will added to the list of sanitizor filters,
+so that we can use it later.
+
+```javascript
+indicative.<span class="apidocCodeKeywordSpan">sanitizor.extend</span>(&#x27;uppercase&#x27;, uppercase)
+```
+
+Now finally you can use it.
+
+```javascript
+// raw sanitizor
+indicative.sanitizor.uppercase(&#x27;hello world&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.validate" id="apidoc.element.indicative.validate">
+        function <span class="apidocSignatureSpan">indicative.</span>validate
+        <span class="apidocSignatureSpan">(data, rules, messages)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (data, rules, messages) {
+  messages = messages || {}
+  const transformedRules = Parser.transformRules(data, rules)
+  const validations = _mapValidations(data, transformedRules, messages)
+
+  return Q.Promise((resolve, reject) =&#x3e; {
+    Q.all(validations)
+    .then(() =&#x3e; resolve(data))
+    .catch((error) =&#x3e; reject([error]))
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+const data = {
+  username: null
+}
+
+indicative
+.<span class="apidocCodeKeywordSpan">validate</span>(data, rules)
+.then(function () {
+  // validation passed
+})
+.catch(function (errors) {
+  // validation failed
+})
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.validateAll" id="apidoc.element.indicative.validateAll">
+        function <span class="apidocSignatureSpan">indicative.</span>validateAll
+        <span class="apidocSignatureSpan">(data, rules, messages)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateAll = function (data, rules, messages) {
+  messages = messages || {}
+  const transformedRules = Parser.transformRules(data, rules)
+  const validations = _mapValidations(data, transformedRules, messages, true)
+
+  return Q.Promise((resolve, reject) =&#x3e; {
+    Q.all(validations)
+    .then(_settleAllPromises)
+    .then(() =&#x3e; resolve(data))
+    .catch(reject)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+})
+```
+
+#### validateAll (data, rules, [messages])
+Validate all will validate all fields even after errors are thrown and return an array of error messages.
+
+```javascript
+indicative.<span class="apidocCodeKeywordSpan">validateAll</span>(data, rules)
+```
+
+### Rules
+
+Indicative helps you in defining rules as a string, which makes it more readable and remove unnecessary curly braces from your schema
+ definition.
+
+A rule is a combination of certain logical expression that are parsed by a parser before starting validation.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.indicative.engine" id="apidoc.module.indicative.engine">module indicative.engine</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.engine.getValidationMethod" id="apidoc.element.indicative.engine.getValidationMethod">
+        function <span class="apidocSignatureSpan">indicative.engine.</span>getValidationMethod
+        <span class="apidocSignatureSpan">(validation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValidationMethod = function (validation) {
+  return _.get(Validations, _.camelCase(validation), function () {
+    throw new Error(`${validation} is not defined as a validation`)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {Object} messages
+ * @param  {Array}  [args]
+ *
+ * @return {Promise}
+ */
+ValidationEngine.runValidationOnField = function (data, field, validation, messages, args) {
+const message = Messages.make(messages, field, validation, args)
+const validationMethod = ValidationEngine.<span class="apidocCodeKeywordSpan">getValidationMethod</span>(validation)
+
+return Q.Promise((resolve, reject) =&#x3e; {
+  validationMethod(data, field, message, args, _.get)
+  .then(resolve)
+  .catch((error) =&#x3e; {
+    reject({field, validation, message: error})
+  })
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.engine.runValidationOnField" id="apidoc.element.indicative.engine.runValidationOnField">
+        function <span class="apidocSignatureSpan">indicative.engine.</span>runValidationOnField
+        <span class="apidocSignatureSpan">(data, field, validation, messages, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runValidationOnField = function (data, field, validation, messages, args) {
+  const message = Messages.make(messages, field, validation, args)
+  const validationMethod = ValidationEngine.getValidationMethod(validation)
+
+  return Q.Promise((resolve, reject) =&#x3e; {
+    validationMethod(data, field, message, args, _.get)
+    .then(resolve)
+    .catch((error) =&#x3e; {
+      reject({field, validation, message: error})
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @return {Promise&#x3c;Array&#x3e;}
+*/
+ValidationEngine.validateField = function (data, field, validations, messages, runAll) {
+ const method = runAll ? &#x27;allSettled&#x27; : &#x27;all&#x27;
+ return Q[method](
+   _.map(validations, (validation) =&#x3e; {
+     return ValidationEngine.<span class="apidocCodeKeywordSpan">runValidationOnField</span>(data, field, validation.name, messages
+, validation.args)
+   })
+ )
+}
+
+/**
+* runs a single validation on a given field.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.engine.validateField" id="apidoc.element.indicative.engine.validateField">
+        function <span class="apidocSignatureSpan">indicative.engine.</span>validateField
+        <span class="apidocSignatureSpan">(data, field, validations, messages, runAll)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateField = function (data, field, validations, messages, runAll) {
+  const method = runAll ? &#x27;allSettled&#x27; : &#x27;all&#x27;
+  return Q[method](
+    _.map(validations, (validation) =&#x3e; {
+      return ValidationEngine.runValidationOnField(data, field, validation.name, messages, validation.args)
+    })
+  )
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.indicative.is" id="apidoc.module.indicative.is">module indicative.is</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.above" id="apidoc.element.indicative.is.above">
+        function <span class="apidocSignatureSpan">indicative.is.</span>above
+        <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">above = function (input, comparsionInput) {
+  return Number(input) &#x3e; Number(comparsionInput)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.negative(-10)
+=&#x3e; true
+```
+
+#### above &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonValue)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">above</span>(10, 20)
+=&#x3e; false
+
+indicative.is.above(30,20)
+=&#x3e; true
+```
+
+#### under &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonValue)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.affirmative" id="apidoc.element.indicative.is.affirmative">
+        function <span class="apidocSignatureSpan">indicative.is.</span>affirmative
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">affirmative = function (input) {
+  const affirmativeArray = [&#x27;yes&#x27;, &#x27;true&#x27;, &#x27;y&#x27;, &#x27;ok&#x27;, &#x27;okay&#x27;]
+  if (input === &#x27;A&#x27;) {
+    return true
+  }
+  return affirmativeArray.indexOf(input.toLowerCase()) &#x3e; -1
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.after" id="apidoc.element.indicative.is.after">
+        function <span class="apidocSignatureSpan">indicative.is.</span>after
+        <span class="apidocSignatureSpan">(input, afterDate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">after = function (input, afterDate) {
+  return moment(input).isAfter(afterDate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.future(tomorrow)
+=&#x3e; true
+```
+
+#### after &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, afterDate)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">after</span>(&#x22;2015-10-01&#x22;, &#x22;2015-10-03&#x22;)
+=&#x3e; false
+
+indicative.is.after(&#x22;2015-10-01&#x22;, &#x22;2015-09-10&#x22;)
+=&#x3e; true
+```
+
+#### before &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, beforeDate)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.afterOffsetOf" id="apidoc.element.indicative.is.afterOffsetOf">
+        function <span class="apidocSignatureSpan">indicative.is.</span>afterOffsetOf
+        <span class="apidocSignatureSpan">(input, number, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">afterOffsetOf = function (input, number, key) {
+  const afterDate = moment().add(number, key)
+  return moment(input).isAfter(afterDate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.alpha" id="apidoc.element.indicative.is.alpha">
+        function <span class="apidocSignatureSpan">indicative.is.</span>alpha
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alpha = function (input) {
+  return Raw.regex(input, alphaRegex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.creditCard(&#x27;3685-1600-4490-1023&#x27;)
+=&#x3e; false
+```
+
+#### alpha &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">alpha</span>(&#x27;virk&#x27;)
+=&#x3e; true
+
+indicative.is.alpha(&#x27;VIrk&#x27;)
+=&#x3e; true
+
+indicative.is.alpha(&#x27;virk123&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.alphaNumeric" id="apidoc.element.indicative.is.alphaNumeric">
+        function <span class="apidocSignatureSpan">indicative.is.</span>alphaNumeric
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alphaNumeric = function (input) {
+  return Raw.regex(input, alphaNumericRegex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.alpha(&#x27;virk123&#x27;)
+=&#x3e; false
+```
+
+#### alphaNumeric &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">alphaNumeric</span>(&#x27;virk&#x27;)
+=&#x3e; true
+
+indicative.is.alphaNumeric(&#x27;virk123&#x27;)
+=&#x3e; true
+
+indicative.is.alphaNumeric(&#x27;virk@123&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.array" id="apidoc.element.indicative.is.array">
+        function <span class="apidocSignatureSpan">indicative.is.</span>array
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">array = function (input) {
+  return input instanceof Array
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Types
+
+Types based validations will check for a certain type
+
+#### array &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">array</span>({age:22})
+=&#x3e; false
+
+indicative.is.array(&#x27;hello world&#x27;)
+=&#x3e; false
+
+indicative.is.array([20,22])
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.before" id="apidoc.element.indicative.is.before">
+        function <span class="apidocSignatureSpan">indicative.is.</span>before
+        <span class="apidocSignatureSpan">(input, beforeDate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">before = function (input, beforeDate) {
+  return moment(input).isBefore(beforeDate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.after(&#x22;2015-10-01&#x22;, &#x22;2015-09-10&#x22;)
+=&#x3e; true
+```
+
+#### before &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, beforeDate)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">before</span>(&#x22;2015-10-01&#x22;, &#x22;2015-10-03&#x22;)
+=&#x3e; true
+
+indicative.is.before(&#x22;2015-10-01&#x22;, &#x22;2015-09-10&#x22;)
+=&#x3e; false
+```
+
+#### dateFormat &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, formats)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.beforeOffsetOf" id="apidoc.element.indicative.is.beforeOffsetOf">
+        function <span class="apidocSignatureSpan">indicative.is.</span>beforeOffsetOf
+        <span class="apidocSignatureSpan">(input, number, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">beforeOffsetOf = function (input, number, key) {
+  const beforeDate = moment().subtract(number, key)
+  return moment(input).isBefore(beforeDate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.between" id="apidoc.element.indicative.is.between">
+        function <span class="apidocSignatureSpan">indicative.is.</span>between
+        <span class="apidocSignatureSpan">(input, min, max)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (input, min, max) {
+  input = Number(input)
+  return (input &#x3e; Number(min)) &#x26;&#x26; (input &#x3c; Number(max))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.under(10,20)
+=&#x3e; true
+```
+
+#### between &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, min, max)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">between</span>(20,10,30)
+=&#x3e; true
+
+indicative.is.between(5,10,30)
+=&#x3e; false
+```
+
+### Array
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.boolean" id="apidoc.element.indicative.is.boolean">
+        function <span class="apidocSignatureSpan">indicative.is.</span>boolean
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">boolean = function (input) {
+  if (input === 0) {
+    input = false
+  } else if (input === 1) {
+    input = true
+  }
+  return typeof (input) === &#x27;boolean&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.array([])
+=&#x3e; true
+```
+
+#### boolean &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">boolean</span>(&#x27;true&#x27;)
+=&#x3e; false
+
+indicative.is.boolean(&#x27;hello&#x27;)
+=&#x3e; false
+
+indicative.is.boolean(0)
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.creditCard" id="apidoc.element.indicative.is.creditCard">
+        function <span class="apidocSignatureSpan">indicative.is.</span>creditCard
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">creditCard = function (input) {
+  input = input.replace(/-/g, &#x27;&#x27;)
+  return Raw.regex(input, creditCardRegex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### creditCard &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+supports **Visa,MasterCard,American Express,Diners Club,Discover,JCB**
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">creditCard</span>(&#x27;4444-4444-4444-4444&#x27;)
+=&#x3e; true
+
+indicative.is.creditCard(&#x27;4444444444444444&#x27;)
+=&#x3e; true
+
+indicative.is.creditCard(&#x27;3685-1600-4490-1023&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.date" id="apidoc.element.indicative.is.date">
+        function <span class="apidocSignatureSpan">indicative.is.</span>date
+        <span class="apidocSignatureSpan">(input, strict)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function (input, strict) {
+  const isDateInstance = input instanceof Date
+  if (!isDateInstance &#x26;&#x26; !strict) {
+    return new Date(input).toString() !== &#x27;Invalid Date&#x27;
+  }
+  return isDateInstance
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+=&#x3e; true
+```
+
+#### date &#x3c;span class=&#x22;italic&#x22;&#x3e;(value [, strict])&#x3c;/span&#x3e;
+strict `true` will only return true when a date object is passed.
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">date</span>(&#x27;2011-10-20&#x27;)
+=&#x3e; true
+
+indicative.is.date(&#x27;2011-10-20&#x27;, true)
+=&#x3e; false
+
+indicative.is.date(new Date(&#x27;2011-10-20&#x27;))
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.dateFormat" id="apidoc.element.indicative.is.dateFormat">
+        function <span class="apidocSignatureSpan">indicative.is.</span>dateFormat
+        <span class="apidocSignatureSpan">(input, formats, locale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dateFormat = function (input, formats, locale) {
+  locale = locale || &#x27;en&#x27;
+  return moment(input, formats, locale, true).isValid()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.before(&#x22;2015-10-01&#x22;, &#x22;2015-09-10&#x22;)
+=&#x3e; false
+```
+
+#### dateFormat &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, formats)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">dateFormat</span>(&#x22;2015-10-01&#x22;, [&#x27;YYYY-MM-DD&#x27;])
+=&#x3e; true
+
+indicative.is.dateFormat(&#x22;2015/10/01&#x22;, [&#x27;YYYY-MM-DD&#x27;])
+=&#x3e; false
+
+indicative.is.dateFormat(&#x22;2015/10/01&#x22;, [&#x27;YYYY-MM-DD&#x27;, &#x27;YYYY/MM/DD&#x27;])
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.email" id="apidoc.element.indicative.is.email">
+        function <span class="apidocSignatureSpan">indicative.is.</span>email
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">email = function (input) {
+  return Raw.regex(input, emailRegex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+```
+
+### Extending Raw Validator
+Extending raw validator is fairly simple as raw validations are quick validations. An example of raw validation can be
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">email</span>(&#x27;your@youremail.com&#x27;)
+```
+
+And to extend raw validator you need to define a validation method that can accept `n` number of arguments based on validation expectations
+. A good example of raw validation can be a password strength checker
+
+```javascript
+const strongPassword = function (password) {
+const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&#x26;\*])(?=.{8,})/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.empty" id="apidoc.element.indicative.is.empty">
+        function <span class="apidocSignatureSpan">indicative.is.</span>empty
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">empty = function (input) {
+  if (!Raw.existy(input)) {
+    return true
+  }
+
+  if (Raw.date(input)) {
+    return false
+  }
+
+  const type = typeof (input)
+
+  switch (type) {
+    case &#x27;object&#x27; :
+      return Object.keys(input).length === 0
+    case &#x27;string&#x27; :
+      return input.length === 0
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.falsy(&#x27;hello&#x27;)
+=&#x3e; false
+```
+
+#### empty &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">empty</span>(null)
+=&#x3e; true
+
+indicative.is.empty(undefined)
+=&#x3e; true
+
+indicative.is.empty({})
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.even" id="apidoc.element.indicative.is.even">
+        function <span class="apidocSignatureSpan">indicative.is.</span>even
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">even = function (input) {
+  return Number(input) % 2 === 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.same(&#x27;10&#x27;,10)
+=&#x3e; false
+```
+
+#### even &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">even</span>(10)
+=&#x3e; true
+
+indicative.is.even(5)
+=&#x3e; false
+```
+
+#### odd &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.existy" id="apidoc.element.indicative.is.existy">
+        function <span class="apidocSignatureSpan">indicative.is.</span>existy
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">existy = function (input) {
+  if (typeof (input) === &#x27;string&#x27;) {
+    return input.length &#x3e; 0
+  }
+  return (input !== null &#x26;&#x26; input !== undefined)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Presence
+
+#### existy &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">existy</span>(&#x27;&#x27;)
+=&#x3e; false
+
+indicative.is.existy(null)
+=&#x3e; false
+
+indicative.is.existy(undefined)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.extend" id="apidoc.element.indicative.is.extend">
+        function <span class="apidocSignatureSpan">indicative.is.</span>extend
+        <span class="apidocSignatureSpan">(name, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (name, method) {
+  if (typeof (method) !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Invalid arguments, is.extends expects 2nd parameter as a function&#x27;)
+  }
+  Validator.is[name] = method
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+4. **args** - An array of values your rule is expecting, it may be empty depending upon your rule expectations. For example `min
+:4` will have args array as `[4]`.
+5. **get** - it is a special function to get value for a given key from the data object, it is recommended to make use of this function
+ as getting nested values from an object can be a tedious task and `get` method takes care of it.
+
+#### extend
+Once you have defined your validation method, you can add it to validations store by calling `extend` method.
+
+```javascript
+indicative.<span class="apidocCodeKeywordSpan">extend</span>(&#x27;unique&#x27;, unique, &#x27;Field should be unique&#x27;)
+```
+
+Extend method takes 3 required parameters to register validation to validations store.
+
+1. **name** - remember to define name as `camelCase` which is consumed as `snake_case`.
+2. **method** - validation method to be executed.
+3. **message** - the error message to print on validation failure.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.falsy" id="apidoc.element.indicative.is.falsy">
+        function <span class="apidocSignatureSpan">indicative.is.</span>falsy
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">falsy = function (input) {
+  return !Raw.truthy(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.truthy(&#x27;hello&#x27;)
+=&#x3e; true
+```
+
+#### falsy &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">falsy</span>(false)
+=&#x3e; true
+
+indicative.is.falsy(0)
+=&#x3e; true
+
+indicative.is.falsy(true)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.function" id="apidoc.element.indicative.is.function">
+        function <span class="apidocSignatureSpan">indicative.is.</span>function
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function = function (input) {
+  return typeof (input) === &#x27;function&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.date(new Date(&#x27;2011-10-20&#x27;), true)
+=&#x3e; true
+```
+
+#### function &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">function</span>(function () {})
+=&#x3e; true
+
+indicative.is.function(&#x27;function () {}&#x27;)
+=&#x3e; false
+```
+
+#### null &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.future" id="apidoc.element.indicative.is.future">
+        function <span class="apidocSignatureSpan">indicative.is.</span>future
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">future = function (input) {
+  return !Raw.past(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.past(tomorrow)
+=&#x3e; false
+```
+
+#### future &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">future</span>(&#x22;2001-01-10&#x22;)
+=&#x3e; false
+
+const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1))
+indicative.is.future(tomorrow)
+=&#x3e; true
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.inArray" id="apidoc.element.indicative.is.inArray">
+        function <span class="apidocSignatureSpan">indicative.is.</span>inArray
+        <span class="apidocSignatureSpan">(input, comparsionArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inArray = function (input, comparsionArray) {
+  const isArrayInstance = comparsionArray instanceof Array
+  if (!isArrayInstance) {
+    return false
+  }
+  return comparsionArray.indexOf(input) &#x3e; -1
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Array
+
+#### inArray &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparsionArray)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">inArray</span>(10,[10,20,40])
+=&#x3e; true
+
+indicative.is.inArray(5,[10,20,40])
+=&#x3e; false
+```
+
+#### sorted &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.inDateRange" id="apidoc.element.indicative.is.inDateRange">
+        function <span class="apidocSignatureSpan">indicative.is.</span>inDateRange
+        <span class="apidocSignatureSpan">(input, minDate, maxDate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inDateRange = function (input, minDate, maxDate) {
+  return moment(input).isBetween(minDate, maxDate)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.dateFormat(&#x22;2015/10/01&#x22;, [&#x27;YYYY-MM-DD&#x27;, &#x27;YYYY/MM/DD&#x27;])
+=&#x3e; true
+```
+
+#### inDateRange &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, minDate, maxDate)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">inDateRange</span>(&#x22;2015-10-01&#x22;, &#x22;2015-09-01&#x22;, &#x22;2015-
+12-01&#x22;)
+=&#x3e; true
+
+indicative.is.inDateRange(&#x22;2015-10-01&#x22;, &#x22;2015-11-01&#x22;, &#x22;2015-12-01&#x22;)
+=&#x3e; false
+```
+
+## Schema Rules
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.intersectAll" id="apidoc.element.indicative.is.intersectAll">
+        function <span class="apidocSignatureSpan">indicative.is.</span>intersectAll
+        <span class="apidocSignatureSpan">(input, intersectionArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">intersectAll = function (input, intersectionArray) {
+  const isArrayInstance = input instanceof Array
+  const isIntersectionArrayInstance = intersectionArray instanceof Array
+  let matchesCount = 0
+
+  if (!isArrayInstance || !isIntersectionArrayInstance) {
+    return false
+  }
+
+  input.filter(function (n) {
+    if (intersectionArray.indexOf(n) &#x3e; -1) {
+      matchesCount++
+    }
+  })
+
+  return matchesCount === input.length
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.intersectAny([10,20],[30,50,40])
+=&#x3e; false
+```
+
+#### intersectAll &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, intersectAll)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">intersectAll</span>([10,20],[20,10,50,40])
+=&#x3e; true
+
+indicative.is.intersectAll([10,20],[10,50,40])
+=&#x3e; false
+```
+
+### Dates
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.intersectAny" id="apidoc.element.indicative.is.intersectAny">
+        function <span class="apidocSignatureSpan">indicative.is.</span>intersectAny
+        <span class="apidocSignatureSpan">(input, intersectionArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">intersectAny = function (input, intersectionArray) {
+  const isArrayInstance = input instanceof Array
+  const isIntersectionArrayInstance = intersectionArray instanceof Array
+  let matchesCount = 0
+
+  if (!isArrayInstance || !isIntersectionArrayInstance) {
+    return false
+  }
+
+  input.filter(function (n) {
+    if (intersectionArray.indexOf(n) &#x3e; -1) {
+      matchesCount++
+      return
+    }
+  })
+  return matchesCount &#x3e; 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.sorted([10,15,5,20])
+=&#x3e; false
+```
+
+#### intersectAny &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonArray)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">intersectAny</span>([10,20],[30,10,40])
+=&#x3e; true
+
+indicative.is.intersectAny([10,20],[30,50,40])
+=&#x3e; false
+```
+
+#### intersectAll &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, intersectAll)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.ip" id="apidoc.element.indicative.is.ip">
+        function <span class="apidocSignatureSpan">indicative.is.</span>ip
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ip = function (input) {
+  return Raw.ipv4(input) || Raw.ipv6(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.alphaNumeric(&#x27;virk@123&#x27;)
+=&#x3e; false
+```
+
+#### ip &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">ip</span>(&#x27;127.0.0.1&#x27;)
+=&#x3e; true
+
+indicative.is.ip(&#x27;192.168.0.1&#x27;)
+=&#x3e; true
+
+indicative.is.ip(&#x27;1:2:3:4:5:6:7:8&#x27;)
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.ipv4" id="apidoc.element.indicative.is.ipv4">
+        function <span class="apidocSignatureSpan">indicative.is.</span>ipv4
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ipv4 = function (input) {
+  return Raw.regex(input, ipv4Regex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.ip(&#x27;localhost&#x27;)
+=&#x3e; false
+```
+
+#### ipv4 &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">ipv4</span>(&#x27;127.0.0.1&#x27;)
+=&#x3e; true
+
+indicative.is.ipv4(&#x27;192.168.0.1&#x27;)
+=&#x3e; true
+
+indicative.is.ipv4(&#x27;1:2:3:4:5:6:7:8&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.ipv6" id="apidoc.element.indicative.is.ipv6">
+        function <span class="apidocSignatureSpan">indicative.is.</span>ipv6
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ipv6 = function (input) {
+  return Raw.regex(input, ipv6Regex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.ipv4(&#x27;1:2:3:4:5:6:7:8&#x27;)
+=&#x3e; false
+```
+
+#### ipv6 &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">ipv6</span>(&#x27;985.12.3.4&#x27;)
+=&#x3e; true
+
+indicative.is.ipv6(&#x27;1:2:3:4:5:6:7:8&#x27;)
+=&#x3e; true
+
+indicative.is.ipv6(&#x27;1.2.3&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.json" id="apidoc.element.indicative.is.json">
+        function <span class="apidocSignatureSpan">indicative.is.</span>json
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function (input) {
+  try {
+    JSON.parse(input)
+    return true
+  } catch (e) {
+    return false
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.object({})
+=&#x3e; true
+```
+
+#### json &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">json</span>(JSON.stringify({name:&#x27;doe&#x27;}))
+=&#x3e; true
+
+indicative.is.json(JSON.stringify([10,20]))
+=&#x3e; true
+
+indicative.is.json({name:&#x27;doe&#x27;})
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.negative" id="apidoc.element.indicative.is.negative">
+        function <span class="apidocSignatureSpan">indicative.is.</span>negative
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">negative = function (input) {
+  return !Raw.positive(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.positive(-10)
+=&#x3e; false
+```
+
+#### negative &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">negative</span>(10)
+=&#x3e; false
+
+indicative.is.negative(-10)
+=&#x3e; true
+```
+
+#### above &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonValue)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.null" id="apidoc.element.indicative.is.null">
+        function <span class="apidocSignatureSpan">indicative.is.</span>null
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">null = function (input) {
+  return input === null
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.function(&#x27;function () {}&#x27;)
+=&#x3e; false
+```
+
+#### null &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">null</span>(null)
+=&#x3e; true
+
+indicative.is.null(&#x27;null&#x27;)
+=&#x3e; false
+```
+
+#### number &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.number" id="apidoc.element.indicative.is.number">
+        function <span class="apidocSignatureSpan">indicative.is.</span>number
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (input) {
+  return typeof (input) === &#x27;number&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.null(&#x27;null&#x27;)
+=&#x3e; false
+```
+
+#### number &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">number</span>(22)
+=&#x3e; true
+
+indicative.is.number(&#x27;22&#x27;)
+=&#x3e; false
+```
+
+#### object &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.object" id="apidoc.element.indicative.is.object">
+        function <span class="apidocSignatureSpan">indicative.is.</span>object
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">object = function (input) {
+  return input instanceof Object &#x26;&#x26; !Raw.array(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.number(&#x27;22&#x27;)
+=&#x3e; false
+```
+
+#### object &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">object</span>({name:&#x27;doe&#x27;})
+=&#x3e; true
+
+indicative.is.object([&#x27;doe&#x27;])
+=&#x3e; false
+
+indicative.is.object(&#x27;doe&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.odd" id="apidoc.element.indicative.is.odd">
+        function <span class="apidocSignatureSpan">indicative.is.</span>odd
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">odd = function (input) {
+  return !Raw.even(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.even(5)
+=&#x3e; false
+```
+
+#### odd &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">odd</span>(10)
+=&#x3e; false
+
+indicative.is.odd(5)
+=&#x3e; true
+```
+
+#### positive &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.past" id="apidoc.element.indicative.is.past">
+        function <span class="apidocSignatureSpan">indicative.is.</span>past
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">past = function (input) {
+  return moment().isAfter(input, &#x27;date&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.tomorrow(tomorrow)
+=&#x3e; true
+```
+
+#### past &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">past</span>(&#x22;2001-01-10&#x22;)
+=&#x3e; true
+
+const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1))
+indicative.is.past(tomorrow)
+=&#x3e; false
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.phone" id="apidoc.element.indicative.is.phone">
+        function <span class="apidocSignatureSpan">indicative.is.</span>phone
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">phone = function (input) {
+  return Raw.regex(input, phoneRegex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.url(&#x27;email.org&#x27;)
+=&#x3e; false
+```
+
+#### phone &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">phone</span>(&#x27;1235554567&#x27;)
+=&#x3e; true
+
+indicative.is.phone(&#x27;444-555-1234&#x27;)
+=&#x3e; true
+
+indicative.is.phone(&#x27;246.555.8888&#x27;)
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.positive" id="apidoc.element.indicative.is.positive">
+        function <span class="apidocSignatureSpan">indicative.is.</span>positive
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">positive = function (input) {
+  return Number(input) &#x3e;= 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.odd(5)
+=&#x3e; true
+```
+
+#### positive &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">positive</span>(10)
+=&#x3e; true
+
+indicative.is.positive(-10)
+=&#x3e; false
+```
+
+#### negative &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.regex" id="apidoc.element.indicative.is.regex">
+        function <span class="apidocSignatureSpan">indicative.is.</span>regex
+        <span class="apidocSignatureSpan">(input, regex)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regex = function (input, regex) {
+  return regex.test(input)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+=&#x3e; false
+```
+
+#### regex &#x3c;span class=&#x22;italic&#x22;&#x3e;(pattern, value)&#x3c;/span&#x3e;
+run your own custom regex
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">regex</span>(/[a-z]+/,&#x27;virk&#x27;)
+=&#x3e; true
+
+indicative.is.regex(/[a-z]+/,&#x27;virk123&#x27;)
+=&#x3e; false
+```
+
+### Arithmetic
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.same" id="apidoc.element.indicative.is.same">
+        function <span class="apidocSignatureSpan">indicative.is.</span>same
+        <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">same = function (input, comparsionInput) {
+  return input === comparsionInput
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Arithmetic
+
+#### same &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonValue)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">same</span>(10,5+5)
+=&#x3e; true
+
+indicative.is.same(&#x27;hello&#x27;,&#x27;hello&#x27;)
+=&#x3e; true
+
+indicative.is.same(&#x27;10&#x27;,10)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.sameType" id="apidoc.element.indicative.is.sameType">
+        function <span class="apidocSignatureSpan">indicative.is.</span>sameType
+        <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sameType = function (input, comparsionInput) {
+  return typeof (input) === typeof (comparsionInput)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.string(22)
+=&#x3e; false
+```
+
+#### sameType &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonValue)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">sameType</span>(22,10)
+=&#x3e; true
+
+indicative.is.sameType(&#x27;hello&#x27;, &#x27;world&#x27;)
+=&#x3e; true
+
+indicative.is.sameType(22, &#x27;10&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.sorted" id="apidoc.element.indicative.is.sorted">
+        function <span class="apidocSignatureSpan">indicative.is.</span>sorted
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sorted = function (input) {
+  const isArrayInstance = input instanceof Array
+  let downScale = 0
+  if (!isArrayInstance) {
+    return false
+  }
+  input.sort(function (a, b) {
+    if (a &#x3e; b) {
+      downScale++
+      return
+    }
+  })
+  return downScale === 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.inArray(5,[10,20,40])
+=&#x3e; false
+```
+
+#### sorted &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">sorted</span>([10,20,40,50])
+=&#x3e; true
+
+indicative.is.sorted([10,15,5,20])
+=&#x3e; false
+```
+
+#### intersectAny &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonArray)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.string" id="apidoc.element.indicative.is.string">
+        function <span class="apidocSignatureSpan">indicative.is.</span>string
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">string = function (input) {
+  return typeof (input) === &#x27;string&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.json({name:&#x27;doe&#x27;})
+=&#x3e; false
+```
+
+#### string &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">string</span>(JSON.stringify({name:&#x27;doe&#x27;}))
+=&#x3e; true
+
+indicative.is.string(&#x27;hello world&#x27;)
+=&#x3e; true
+
+indicative.is.string(22)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.today" id="apidoc.element.indicative.is.today">
+        function <span class="apidocSignatureSpan">indicative.is.</span>today
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">today = function (input) {
+  const today = moment().format(&#x27;YYYY-MM-DD&#x27;)
+  const inputDate = moment(input).format(&#x27;YYYY-MM-DD&#x27;)
+  return inputDate === today
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Dates
+
+#### today &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">today</span>(new Date())
+=&#x3e; true
+
+// if today date is 2015-11-30
+indicative.is.today(&#x22;2015-11-30&#x22;)
+=&#x3e; true
+
+const yesterday = new Date(new Date().setDate(new Date().getDate() - 1))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.tomorrow" id="apidoc.element.indicative.is.tomorrow">
+        function <span class="apidocSignatureSpan">indicative.is.</span>tomorrow
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tomorrow = function (input) {
+  const tomorrow = moment().add(1, &#x27;days&#x27;).format(&#x27;YYYY-MM-DD&#x27;)
+  const inputDate = moment(input).format(&#x27;YYYY-MM-DD&#x27;)
+  return inputDate === tomorrow
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.yesterday(yesterday)
+=&#x3e; true
+```
+
+#### tomorrow &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">tomorrow</span>(new Date())
+=&#x3e; false
+
+// if tomorrow date will be 2015-12-01
+indicative.is.tomorrow(&#x22;2015-12-01&#x22;)
+=&#x3e; true
+
+const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.truthy" id="apidoc.element.indicative.is.truthy">
+        function <span class="apidocSignatureSpan">indicative.is.</span>truthy
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">truthy = function (input) {
+  return Raw.existy(input) &#x26;&#x26; input !== false &#x26;&#x26; input !== 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.existy(22)
+=&#x3e; true
+```
+
+#### truthy &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">truthy</span>(false)
+=&#x3e; false
+
+indicative.is.truthy(0)
+=&#x3e; false
+
+indicative.is.truthy(true)
+=&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.under" id="apidoc.element.indicative.is.under">
+        function <span class="apidocSignatureSpan">indicative.is.</span>under
+        <span class="apidocSignatureSpan">(input, comparsionInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">under = function (input, comparsionInput) {
+  return !Raw.above(input, comparsionInput)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.above(30,20)
+=&#x3e; true
+```
+
+#### under &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, comparisonValue)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">under</span>(30, 20)
+=&#x3e; false
+
+indicative.is.under(10,20)
+=&#x3e; true
+```
+
+#### between &#x3c;span class=&#x22;italic&#x22;&#x3e;(value, min, max)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.url" id="apidoc.element.indicative.is.url">
+        function <span class="apidocSignatureSpan">indicative.is.</span>url
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (input) {
+  return Raw.regex(input, urlRegex)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Regex
+
+#### url &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">url</span>(&#x27;http://adonisjs.com&#x27;)
+=&#x3e; true
+
+indicative.is.url(&#x27;https://adonisjs.com&#x27;)
+=&#x3e; true
+
+indicative.is.url(&#x27;adonisjs.com&#x27;)
+=&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.is.yesterday" id="apidoc.element.indicative.is.yesterday">
+        function <span class="apidocSignatureSpan">indicative.is.</span>yesterday
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yesterday = function (input) {
+  const yesterday = moment().subtract(1, &#x27;days&#x27;).format(&#x27;YYYY-MM-DD&#x27;)
+  const inputDate = moment(input).format(&#x27;YYYY-MM-DD&#x27;)
+  return inputDate === yesterday
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+indicative.is.today(yesterday)
+=&#x3e; false
+```
+
+#### yesterday &#x3c;span class=&#x22;italic&#x22;&#x3e;(value)&#x3c;/span&#x3e;
+
+```javascript
+indicative.is.<span class="apidocCodeKeywordSpan">yesterday</span>(new Date())
+=&#x3e; false
+
+// if yesterday date was 2015-11-29
+indicative.is.yesterday(&#x22;2015-11-29&#x22;)
+=&#x3e; true
+
+const yesterday = new Date(new Date().setDate(new Date().getDate() - 1))
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.indicative.sanitizor" id="apidoc.module.indicative.sanitizor">module indicative.sanitizor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.blacklist" id="apidoc.element.indicative.sanitizor.blacklist">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>blacklist
+        <span class="apidocSignatureSpan">(value, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blacklist = function (value, args) {
+  const blacklistRegex = new RegExp(`[${args[0]}]`, &#x27;g&#x27;)
+  return _replace(value, blacklistRegex, &#x27;&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Below is the list of filters available to be used for raw and schema sanitizations.
+
+#### blacklist &#x3c;span class=&#x22;italic&#x22;&#x3e;(values)&#x3c;/span&#x3e;
+removes values inside blacklist from the actual string. Passed values are used inside a regex, so make sure to escape values properly
+. `\\[\\]` instead of `\`.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">blacklist</span>(&#x27;hello world&#x27;, &#x27;ord&#x27;)
+
+// with schema
+{
+  description: &#x27;blacklist:ord&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.camelCase" id="apidoc.element.indicative.sanitizor.camelCase">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>camelCase
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camelCase = function (value) {
+  return inflect.camelize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### camelCase
+Converts a given to camel-case.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">camelCase</span>(&#x27;users-controller&#x27;)
+
+// with schema
+{
+  fileName: &#x27;camel_case&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.capitalize" id="apidoc.element.indicative.sanitizor.capitalize">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>capitalize
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">capitalize = function (value) {
+  return inflect.capitalize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### capitalize
+`capitalize` a given string.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">capitalize</span>(&#x27;doe&#x27;)
+
+// with schema
+{
+  fullName: &#x27;capitalize&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.decapitalize" id="apidoc.element.indicative.sanitizor.decapitalize">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>decapitalize
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decapitalize = function (value) {
+  return inflect.decapitalize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### decapitalize
+`decapitalize` a given string.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">decapitalize</span>(&#x27;Bar&#x27;)
+
+// with schema
+{
+  username: &#x27;decapitalize&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.escape" id="apidoc.element.indicative.sanitizor.escape">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>escape
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escape = function (value) {
+  if (typeof (value) !== &#x27;string&#x27;) {
+    return value
+  }
+
+  return (
+  value
+    .replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;)
+    .replace(/&#x22;/g, &#x27;&#x26;quot;&#x27;)
+    .replace(/&#x27;/g, &#x27;&#x26;#x27;&#x27;)
+    .replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;)
+    .replace(/&#x3e;/g, &#x27;&#x26;gt;&#x27;)
+    .replace(/\//g, &#x27;&#x26;#x2F;&#x27;)
+    .replace(/\//g, &#x27;&#x26;#96;&#x27;)
+  )
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+```
+
+#### escape
+Escapes html characters with html entities
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">escape</span>(&#x27;&#x3c;div&#x3e; hello world &#x3c;/div&#x3e;&#x27;)
+
+// with schema
+{
+  description: &#x27;escape&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.extend" id="apidoc.element.indicative.sanitizor.extend">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>extend
+        <span class="apidocSignatureSpan">(name, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (name, method) {
+  if (typeof (method) !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Invalid arguments, sanitizor.extend expects 2nd parameter to be a function&#x27;)
+  }
+  Sanitization.sanitizor[name] = method
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+4. **args** - An array of values your rule is expecting, it may be empty depending upon your rule expectations. For example `min
+:4` will have args array as `[4]`.
+5. **get** - it is a special function to get value for a given key from the data object, it is recommended to make use of this function
+ as getting nested values from an object can be a tedious task and `get` method takes care of it.
+
+#### extend
+Once you have defined your validation method, you can add it to validations store by calling `extend` method.
+
+```javascript
+indicative.<span class="apidocCodeKeywordSpan">extend</span>(&#x27;unique&#x27;, unique, &#x27;Field should be unique&#x27;)
+```
+
+Extend method takes 3 required parameters to register validation to validations store.
+
+1. **name** - remember to define name as `camelCase` which is consumed as `snake_case`.
+2. **method** - validation method to be executed.
+3. **message** - the error message to print on validation failure.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.humanize" id="apidoc.element.indicative.sanitizor.humanize">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>humanize
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">humanize = function (value) {
+  return inflect.humanize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.normalizeEmail" id="apidoc.element.indicative.sanitizor.normalizeEmail">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>normalizeEmail
+        <span class="apidocSignatureSpan">(value, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalizeEmail = function (value, args) {
+  const options = {
+    lowercase: true,
+    removeDots: true,
+    removeExtension: true
+  }
+
+  if (args instanceof Array) {
+    args.forEach(function (option) {
+      if (option === &#x27;!lc&#x27;) {
+        options.lowercase = false
+      }
+      if (option === &#x27;!rd&#x27;) {
+        options.removeDots = false
+      }
+      if (option === &#x27;!re&#x27;) {
+        options.removeExtension = false
+      }
+    })
+  }
+
+  if (typeof (value) !== &#x27;string&#x27;) {
+    return value
+  }
+
+  const splitValue = value.split(&#x27;@&#x27;)
+
+  if (!splitValue[1]) {
+    return value
+  }
+
+  let username = options.lowercase ? splitValue[0].toLowerCase() : splitValue[0]
+  const domain = splitValue[1] === &#x27;googlemail.com&#x27; ? &#x27;gmail.com&#x27; : splitValue[1].toLowerCase()
+
+  if (options.removeExtension &#x26;&#x26; _isNormalizeableProvider(domain)) {
+    username = username.split(&#x27;+&#x27;)[0]
+  }
+
+  if (options.removeDots &#x26;&#x26; !_isHotmail(domain)) {
+    username = username.replace(/\./g, &#x27;&#x27;)
+  }
+
+  return `${username}@${domain}`
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+1. **!lc** - Do not convert email to lowercase, hence domain name will be converted to lowercase. `FOO@GMAIL.COM` will become `FOO
+@gmail.com`
+
+2. **!rd** - Stop sanitizor from removing dots.
+3. **!re** - Do not remove everything after `+` symbol. `bar.sneaky+foo@gmail.com` will become `barsneaky+foo@gmail.com`
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">normalizeEmail</span>(&#x27;bar.sneaky+foo@gmail.com&#x27;, [&#x27;!rd&#
+x27;, &#x27;!re&#x27;, &#x27;!lc&#x27;])
+
+// with schema
+{
+  email: &#x27;normalize_email:!rd,!re,!lc&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.plural" id="apidoc.element.indicative.sanitizor.plural">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>plural
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">plural = function (value) {
+  return inflect.pluralize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### plural
+Converts a given value to plural. Which means `person` will be converted to `people`.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">plural</span>(&#x27;child&#x27;)
+
+// with schema
+{
+  november14: &#x27;plural&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.singular" id="apidoc.element.indicative.sanitizor.singular">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>singular
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">singular = function (value) {
+  return inflect.singularize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.slug" id="apidoc.element.indicative.sanitizor.slug">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>slug
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slug = function (value) {
+  return inflect.parameterize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Raw Sanitizor
+For quick sanitizations you can make use of raw filters
+
+```javascript
+const indicative = require(&#x27;indicative&#x27;)
+indicative.sanitizor.toInt(&#x27;22&#x27;) // 22
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">slug</span>(&#x27;hello world&#x27;) // hello-world
+indicative.sanitizor.toDate(&#x27;22-1-2016&#x27;) // javascript date object
+```
+
+### Filters
+Below is the list of filters available to be used for raw and schema sanitizations.
+
+#### blacklist &#x3c;span class=&#x22;italic&#x22;&#x3e;(values)&#x3c;/span&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.stripLinks" id="apidoc.element.indicative.sanitizor.stripLinks">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>stripLinks
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stripLinks = function (value) {
+  return _replace(value, linksRegex, function (index, group) {
+    return group.trim()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### stripLinks
+Strips `&#x3c;a&#x3e;&#x3c;/a&#x3e;` tags from a given string. If input is not a string, actual value will be returned.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">stripLinks</span>(&#x27;&#x3c;a href=&#x22;http://adonisjs.com&#x22;&#x3e
+; Adonisjs &#x3c;/a&#x3e;&#x27;)
+
+// with schema
+{
+  bio: &#x27;strip_links&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.stripTags" id="apidoc.element.indicative.sanitizor.stripTags">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>stripTags
+        <span class="apidocSignatureSpan">(value, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stripTags = function (value, args) {
+  const strict = (args[0] &#x26;&#x26; args[0] === &#x27;trim&#x27;)
+  value = _replace(value, tagsRegex, &#x27;&#x27;)
+  if (strict) {
+    value = _replace(value, /\s+/g, &#x27; &#x27;)
+  }
+  return typeof (value) === &#x27;string&#x27; ? value.trim() : value
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### stripTags
+Strips html tags from a given string. If input is not a string, actual value will be returned.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">stripTags</span>(&#x27;&#x3c;p&#x3e; Hello &#x3c;/p&#x3e;&#x27;)
+
+// with schema
+{
+  tweet: &#x27;strip_tags&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.title" id="apidoc.element.indicative.sanitizor.title">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>title
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">title = function (value) {
+  return inflect.titleize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### title
+converts a value to title case
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">title</span>(&#x27;hello-world&#x27;)
+
+// with schema
+{
+  title: &#x27;title&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.toBoolean" id="apidoc.element.indicative.sanitizor.toBoolean">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toBoolean
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBoolean = function (value) {
+  if (!value || value === &#x27;false&#x27; || value === &#x27;0&#x27;) {
+    return false
+  }
+  return true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### toBoolean
+Converts value to a boolean, `0, false, null, undefined, &#x27;&#x27;` will return `false` and everything else will return `true
+`.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">toBoolean</span>(&#x27;false&#x27;)
+
+// with schema
+{
+  isAdmin: &#x27;to_boolean&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.toDash" id="apidoc.element.indicative.sanitizor.toDash">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toDash
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toDash = function (value) {
+  return inflect.dasherize(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.toDate" id="apidoc.element.indicative.sanitizor.toDate">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toDate
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toDate = function (value) {
+  const dateValue = new Date(value)
+  return (dateValue.toString() === &#x27;Invalid Date&#x27;) ? null : dateValue
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Raw Sanitizor
+For quick sanitizations you can make use of raw filters
+
+```javascript
+const indicative = require(&#x27;indicative&#x27;)
+indicative.sanitizor.toInt(&#x27;22&#x27;) // 22
+indicative.sanitizor.slug(&#x27;hello world&#x27;) // hello-world
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">toDate</span>(&#x27;22-1-2016&#x27;) // javascript date object
+```
+
+### Filters
+Below is the list of filters available to be used for raw and schema sanitizations.
+
+#### blacklist &#x3c;span class=&#x22;italic&#x22;&#x3e;(values)&#x3c;/span&#x3e;
+removes values inside blacklist from the actual string. Passed values are used inside a regex, so make sure to escape values properly
+. `\\[\\]` instead of `\`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.toFloat" id="apidoc.element.indicative.sanitizor.toFloat">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toFloat
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toFloat = function (value) {
+  return parseFloat(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### toFloat
+Converts value to float and returns `NaN` if unable to convert.
+
+```javascript
+// raw sanitization
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">toFloat</span>(&#x27;32.55&#x27;)
+
+// with schema
+{
+  marks: &#x27;to_float&#x27;
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.toInt" id="apidoc.element.indicative.sanitizor.toInt">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>toInt
+        <span class="apidocSignatureSpan">(value, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toInt = function (value, args) {
+  const radix = typeof (args[0]) === &#x27;number&#x27; ? args[0] : 10
+  return parseInt(value, radix)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Raw Sanitizor
+For quick sanitizations you can make use of raw filters
+
+```javascript
+const indicative = require(&#x27;indicative&#x27;)
+indicative.sanitizor.<span class="apidocCodeKeywordSpan">toInt</span>(&#x27;22&#x27;) // 22
+indicative.sanitizor.slug(&#x27;hello world&#x27;) // hello-world
+indicative.sanitizor.toDate(&#x27;22-1-2016&#x27;) // javascript date object
+```
+
+### Filters
+Below is the list of filters available to be used for raw and schema sanitizations.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.indicative.sanitizor.underscore" id="apidoc.element.indicative.sanitizor.underscore">
+        function <span class="apidocSignatureSpan">indicative.sanitizor.</span>underscore
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">underscore = function (value) {
+  return inflect.underscore(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
