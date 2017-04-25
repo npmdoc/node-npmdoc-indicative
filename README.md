@@ -1,6 +1,6 @@
 # npmdoc-indicative
 
-#### api documentation for  [indicative (v2.2.1)](https://github.com/poppinss/indicative#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-indicative.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-indicative) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-indicative.svg)](https://travis-ci.org/npmdoc/node-npmdoc-indicative)
+#### basic api documentation for  [indicative (v2.2.1)](https://github.com/poppinss/indicative#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-indicative.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-indicative) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-indicative.svg)](https://travis-ci.org/npmdoc/node-npmdoc-indicative)
 
 #### Intentionally beautiful schema and raw validator for nodejs
 
@@ -21,17 +21,25 @@
 ```json
 
 {
-    "name": "indicative",
-    "version": "2.2.1",
-    "description": "Intentionally beautiful schema and raw validator for nodejs",
-    "main": "index.js",
-    "scripts": {
-        "test": "npm run lint && istanbul cover _mocha --report lcovonly -- -R spec test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-        "coverage": "npm run lint && istanbul cover _mocha test --bail",
-        "lint": "standard"
+    "author": {
+        "name": "amanvirk"
     },
-    "author": "amanvirk",
-    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/poppinss/indicative/issues"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "dependencies": {
+        "inflect": "^0.3.0",
+        "lodash": "^4.12.0",
+        "moment": "^2.13.0",
+        "pope": "^1.0.0",
+        "q": "^2.0.3"
+    },
+    "description": "Intentionally beautiful schema and raw validator for nodejs",
     "devDependencies": {
         "benchmark": "^2.1.0",
         "chai": "^3.5.0",
@@ -43,12 +51,42 @@
         "mocha-lcov-reporter": "^1.2.0",
         "standard": "^8.4.0"
     },
-    "dependencies": {
-        "inflect": "^0.3.0",
-        "lodash": "^4.12.0",
-        "moment": "^2.13.0",
-        "pope": "^1.0.0",
-        "q": "^2.0.3"
+    "directories": {
+        "doc": "docs",
+        "test": "test"
+    },
+    "dist": {
+        "shasum": "2d007aef269c0ca6bf136c5577f0ace4361fb4de",
+        "tarball": "https://registry.npmjs.org/indicative/-/indicative-2.2.1.tgz"
+    },
+    "gitHead": "ac6af436864163c428b717072f6190c46220f9f0",
+    "homepage": "https://github.com/poppinss/indicative#readme",
+    "keywords": [
+        "node-validator",
+        "validator",
+        "schema-validator",
+        "quick-validations"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "maintainers": [
+        {
+            "name": "adonisjs"
+        },
+        {
+            "name": "amanvirk"
+        }
+    ],
+    "name": "indicative",
+    "optionalDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/poppinss/indicative.git"
+    },
+    "scripts": {
+        "coverage": "npm run lint && istanbul cover _mocha test --bail",
+        "lint": "standard",
+        "test": "npm run lint && istanbul cover _mocha --report lcovonly -- -R spec test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
     },
     "standard": {
         "global": [
@@ -61,29 +99,8 @@
             "afterEach"
         ]
     },
-    "directories": {
-        "doc": "docs",
-        "test": "test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/poppinss/indicative.git"
-    },
-    "keywords": [
-        "node-validator",
-        "validator",
-        "schema-validator",
-        "quick-validations"
-    ],
-    "bugs": {
-        "url": "https://github.com/poppinss/indicative/issues"
-    },
-    "homepage": "https://github.com/poppinss/indicative#readme",
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
-    }
+    "version": "2.2.1",
+    "bin": {}
 }
 ```
 
