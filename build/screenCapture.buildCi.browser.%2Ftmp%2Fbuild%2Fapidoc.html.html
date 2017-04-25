@@ -110,12 +110,6 @@
 
         <li>
 
-            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">indicative.</span>engine</span>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">indicative.</span>is</span>
 
         </li>
@@ -123,37 +117,6 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">indicative.</span>sanitizor</span>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.indicative.engine">module indicative.engine</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.indicative.engine.getValidationMethod">
-            function <span class="apidocSignatureSpan">indicative.engine.</span>getValidationMethod
-            <span class="apidocSignatureSpan">(validation)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.indicative.engine.runValidationOnField">
-            function <span class="apidocSignatureSpan">indicative.engine.</span>runValidationOnField
-            <span class="apidocSignatureSpan">(data, field, validation, messages, args)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.indicative.engine.validateField">
-            function <span class="apidocSignatureSpan">indicative.engine.</span>validateField
-            <span class="apidocSignatureSpan">(data, field, validations, messages, runAll)</span>
-            </a>
 
         </li>
 
@@ -1020,107 +983,6 @@ A rule is a combination of certain logical expression that are parsed by a parse
 
 
 
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.indicative.engine" id="apidoc.module.indicative.engine">module indicative.engine</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.indicative.engine.getValidationMethod" id="apidoc.element.indicative.engine.getValidationMethod">
-        function <span class="apidocSignatureSpan">indicative.engine.</span>getValidationMethod
-        <span class="apidocSignatureSpan">(validation)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">getValidationMethod = function (validation) {
-  return _.get(Validations, _.camelCase(validation), function () {
-    throw new Error(`${validation} is not defined as a validation`)
-  })
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
- * @param  {Object} messages
- * @param  {Array}  [args]
- *
- * @return {Promise}
- */
-ValidationEngine.runValidationOnField = function (data, field, validation, messages, args) {
-const message = Messages.make(messages, field, validation, args)
-const validationMethod = ValidationEngine.<span class="apidocCodeKeywordSpan">getValidationMethod</span>(validation)
-
-return Q.Promise((resolve, reject) =&gt; {
-  validationMethod(data, field, message, args, _.get)
-  .then(resolve)
-  .catch((error) =&gt; {
-    reject({field, validation, message: error})
-  })
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.indicative.engine.runValidationOnField" id="apidoc.element.indicative.engine.runValidationOnField">
-        function <span class="apidocSignatureSpan">indicative.engine.</span>runValidationOnField
-        <span class="apidocSignatureSpan">(data, field, validation, messages, args)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">runValidationOnField = function (data, field, validation, messages, args) {
-  const message = Messages.make(messages, field, validation, args)
-  const validationMethod = ValidationEngine.getValidationMethod(validation)
-
-  return Q.Promise((resolve, reject) =&gt; {
-    validationMethod(data, field, message, args, _.get)
-    .then(resolve)
-    .catch((error) =&gt; {
-      reject({field, validation, message: error})
-    })
-  })
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-*
-* @return {Promise&lt;Array&gt;}
-*/
-ValidationEngine.validateField = function (data, field, validations, messages, runAll) {
- const method = runAll ? 'allSettled' : 'all'
- return Q[method](
-   _.map(validations, (validation) =&gt; {
-     return ValidationEngine.<span class="apidocCodeKeywordSpan">runValidationOnField</span>(data, field, validation.name, messages
-, validation.args)
-   })
- )
-}
-
-/**
-* runs a single validation on a given field.
-*
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.indicative.engine.validateField" id="apidoc.element.indicative.engine.validateField">
-        function <span class="apidocSignatureSpan">indicative.engine.</span>validateField
-        <span class="apidocSignatureSpan">(data, field, validations, messages, runAll)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">validateField = function (data, field, validations, messages, runAll) {
-  const method = runAll ? 'allSettled' : 'all'
-  return Q[method](
-    _.map(validations, (validation) =&gt; {
-      return ValidationEngine.runValidationOnField(data, field, validation.name, messages, validation.args)
-    })
-  )
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
 </div>
 
 <div class="apidocSectionDiv">
@@ -1219,7 +1081,22 @@ indicative.is.after("2015-10-01", "2015-09-10")
   const afterDate = moment().add(number, key)
   return moment(input).isAfter(afterDate)
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    const fieldValue = get(data, field)
+    const offset = Number(args[0])
+    const key = args[1]
+    if (skippable(fieldValue)) {
+      resolve('validation skipped')
+      return
+    }
+    if (Raw.<span class="apidocCodeKeywordSpan">afterOffsetOf</span>(fieldValue, offset, key)) {
+      resolve('validation passed')
+      return
+    }
+    reject(message)
+  })
+}
+...</pre></li>
     </ul>
 
 
@@ -1359,7 +1236,22 @@ indicative.is.before("2015-10-01", "2015-09-10")
   const beforeDate = moment().subtract(number, key)
   return moment(input).isBefore(beforeDate)
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    const fieldValue = get(data, field)
+    const offset = Number(args[0])
+    const key = args[1]
+    if (skippable(fieldValue)) {
+      resolve('validation skipped')
+      return
+    }
+    if (Raw.<span class="apidocCodeKeywordSpan">beforeOffsetOf</span>(fieldValue, offset, key)) {
+      resolve('validation passed')
+      return
+    }
+    reject(message)
+  })
+}
+...</pre></li>
     </ul>
 
 
@@ -2909,7 +2801,17 @@ Extend method takes 3 required parameters to register validation to validations 
     <li>description and source-code<pre class="apidocCodePre">humanize = function (value) {
   return inflect.humanize(value)
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+SanitizationFilters.slug = function (value) {
+  return inflect.parameterize(value)
+}
+
+SanitizationFilters.humanize = function (value) {
+  return inflect.<span class="apidocCodeKeywordSpan">humanize</span>(value)
+}
+...</pre></li>
     </ul>
 
 
@@ -3314,7 +3216,23 @@ Below is the list of filters available to be used for raw and schema sanitizatio
     <li>description and source-code<pre class="apidocCodePre">underscore = function (value) {
   return inflect.underscore(value)
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+SanitizationFilters.title = function (value) {
+  return inflect.titleize(value)
+}
+
+SanitizationFilters.underscore = function (value) {
+  return inflect.<span class="apidocCodeKeywordSpan">underscore</span>(value)
+}
+
+SanitizationFilters.toDash = function (value) {
+  return inflect.dasherize(value)
+}
+
+SanitizationFilters.slug = function (value) {
+...</pre></li>
     </ul>
 
 
